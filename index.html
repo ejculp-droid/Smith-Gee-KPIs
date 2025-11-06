@@ -1,14 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elliott Culp - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smith Gee KPIs</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #faf7f3; }
+    .navbar { display: flex; flex-wrap: wrap; background: #eea47f; color: #fff; padding: 0 1rem; align-items: center; }
+    .navbar .brand { font-weight: bold; font-size: 1.25rem; padding: 1rem 1rem 1rem 0; color: #fff; text-decoration: none; }
+    .navbar .nav { display: flex; flex: 1; gap: 1rem; }
+    .navbar button { background: none; border: none; color: inherit; cursor: pointer; font: inherit; padding: 1rem .6rem; transition: background 0.2s; border-radius: 4px 4px 0 0; outline: none; }
+    .navbar button.active, .navbar button:focus { background: #f76b1c; }
+    .tab-content { max-width: 800px; margin: 2rem auto 1rem auto; background: #fff6eb; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.08); padding: 2rem 1.2rem; display: none; }
+    .tab-content.active { display: block; }
+    @media (max-width: 600px) {
+      .navbar { flex-direction: column; align-items: stretch; gap: 0; }
+      .navbar .nav { flex-direction: column; gap: 0; }
+      .navbar button { text-align: left; }
+      .tab-content { padding: 1rem 0.6rem; }
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 0;">
-    <div style="position: relative; width: 100%; height: 0; padding-top: 112.4451%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAG34dROeVc/S2Ezl1HaH8Sao80oblGpVw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="#">Smith Gee KPIs</a>
+    <div class="nav">
+      <button class="active" onclick="showTab('splash')">Home</button>
+      <button onclick="showTab('senior-pm')">Senior Project Manager KPIs</button>
+      <button onclick="showTab('pm')">Project Manager KPIs</button>
+      <button onclick="showTab('designer')">Designer I & II KPIs</button>
+      <button onclick="showTab('senior-designer')">Senior Designer I & II KPIs</button>
+      <button onclick="showTab('bim')">BIM Manager KPIs</button>
+      <button onclick="showTab('citizenship')">Studio Citizenship Score</button>
     </div>
-    <a href="https://www.canva.com/design/DAG34dROeVc/S2Ezl1HaH8Sao80oblGpVw/view?utm_content=DAG34dROeVc&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Design - Illustration Portfolio Website in White Black Light Experimental Style</a> by Elliott Culp
+  </nav>
+  <section id="splash" class="tab-content active">
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.4451%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.13); margin-top: 0.6em; margin-bottom: 1.3em; overflow: hidden; border-radius: 8px;">
+      <iframe allowfullscreen loading="lazy" src="https://www.canva.com/design/DAG34dROeVc/S2Ezl1HaH8Sao80oblGpVw/view?embed" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"></iframe>
+    </div>
+    <p style="text-align:center;">
+      <a href="https://www.canva.com/design/DAG34dROeVc/S2Ezl1HaH8Sao80oblGpVw/view?utm_content=DAG34dROeVc&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Design - Illustration Portfolio Website in White Black Light Experimental Style</a> by Elliott Culp
+    </p>
+    <p style="text-align:center;color:#a06c49;">Key Performance Indicators landing page. Use the menu above to explore role KPIs and scoring methodology.</p>
+  </section>
+  <section id="senior-pm" class="tab-content">
+    <h2>Senior Project Manager KPIs</h2>
+    <ul>
+      <li>Team Utilization Rate: 68-72% <br><small>(Total Team Direct Labor Hours ÷ Total Team Hours) × 100</small></li>
+      <li>Team Portfolio Profitability: 20-24% <br><small>Sum of [(Revenue - Costs) ÷ Revenue] ÷ Number of Projects × 100</small></li>
+      <li>Direct Project Profitability: 18-22% <br><small>(Your Project Revenue - Your Project Costs) ÷ Your Project Revenue × 100</small></li>
+      <li>Portfolio Budget Variance: Positive Variance <br><small>Sum of (Budgeted Cost - Actual Cost) across all projects</small></li>
+      <li>Team On-Time Delivery Rate: 80%+ <br><small>(Team Projects Delivered On-Time ÷ Total Team Projects) × 100</small></li>
+      <li>Team Average Realization Rate: 94%+ <br><small>Average [(Actual Revenue ÷ (Hours × Standard Rates)) × 100] across projects</small></li>
+      <li>Portfolio Change Order Profitability: 65-75% <br><small>(Change Order Revenue - Change Order Costs) ÷ Change Order Revenue × 100</small></li>
+      <li>Studio Citizenship Score: ≥3.50 <br><small>(Supervisor Score × 0.75) + (Peer Score × 0.25)</small></li>
+    </ul>
+  </section>
+  <section id="pm" class="tab-content">
+    <h2>Project Manager KPIs</h2>
+    <ul>
+      <li>Utilization Rate: 68-72%</li>
+      <li>Project Profitability: 18-22%</li>
+      <li>Budget Variance: Positive Variance</li>
+      <li>On-Time Delivery Rate: 80%+</li>
+      <li>Average Realization Rate: 94%+</li>
+      <li>Change Order Profitability: 65-75%</li>
+      <li>Studio Citizenship Score: ≥3.50</li>
+    </ul>
+  </section>
+  <section id="designer" class="tab-content">
+    <h2>Designer I & II KPIs</h2>
+    <ul>
+      <li>Utilization Rate: 80%+</li>
+      <li>Billable Hours: ≥1440 per year</li>
+      <li>Quality of Work: Supervisor/Peer Review</li>
+      <li>On-Time Task Completion</li>
+      <li>Studio Citizenship Score: ≥3.50</li>
+    </ul>
+  </section>
+  <section id="senior-designer" class="tab-content">
+    <h2>Senior Designer I & II KPIs</h2>
+    <ul>
+      <li>Utilization Rate: 78%+</li>
+      <li>Billable Hours: ≥1440 per year</li>
+      <li>Quality of Work: Supervisor/Peer Review</li>
+      <li>On-Time Task Completion</li>
+      <li>Studio Citizenship Score: ≥3.50</li>
+    </ul>
+  </section>
+  <section id="bim" class="tab-content">
+    <h2>BIM Manager KPIs</h2>
+    <ul>
+      <li>Utilization Rate: 70%+</li>
+      <li>Project BIM Execution Success</li>
+      <li>BIM Training/Support Sessions Conducted: Target 10/year</li>
+      <li>BIM Model Quality: Supervisor Review</li>
+      <li>Studio Citizenship Score: ≥3.50</li>
+    </ul>
+  </section>
+  <section id="citizenship" class="tab-content">
+    <h2>Studio Citizenship Score</h2>
+    <p>This score is calculated as a weighted sum:</p>
+    <p><b>(Supervisor Score × 0.75) + (Peer Score × 0.25)</b></p>
+    <ul>
+      <li>Supervisor Score: Based on leadership, initiative, contribution to the studio culture</li>
+      <li>Peer Score: Based on collaboration, teamwork, and support</li>
+      <li>Target Score: 3.50 or higher on a 5-point scale</li>
+    </ul>
+  </section>
+  <script>
+function showTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(e => e.classList.remove('active'));
+  document.querySelectorAll('.navbar button').forEach(e => e.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  let idx = Array.from(document.querySelector('.nav').children).findIndex(x => x.onclick && x.onclick.toString().includes(tab));
+  if(idx>=0) document.querySelectorAll('.navbar button')[idx].classList.add('active');
+}
+  </script>
 </body>
 </html>
