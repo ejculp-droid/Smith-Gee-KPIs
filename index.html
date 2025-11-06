@@ -1,180 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smith Gee KPIs</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #faf7f3; }
-    .navbar { display: flex; flex-wrap: wrap; background: #eea47f; color: #fff; padding: 0 1rem; align-items: center; }
-    .navbar .brand { font-weight: bold; font-size: 1.25rem; padding: 1rem 1rem 1rem 0; color: #fff; text-decoration: none; }
-    .navbar .nav { display: flex; flex: 1; gap: 1rem; }
-    .navbar button { background: none; border: none; color: inherit; cursor: pointer; font: inherit; padding: 1rem 0.6rem; transition: background 0.2s; border-radius: 4px 4px 0 0; outline: none; }
-    .navbar button.active, .navbar button:focus { background: #f76b1c; }
-    .tab-content { max-width: 800px; margin: 2rem auto 1rem auto; background: #fff6eb; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.08); padding: 2rem 1.2rem; display: none; }
-    .tab-content.active { display: block; }
-    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: #fff; border-radius: 6px; overflow: hidden; }
-    th, td { border: 1px solid #eec8ab; padding: 10px; text-align: left; }
-    th { background: #eea47f; color: #fff; }
-    tr:nth-child(even) { background: #fff6eb; }
-    .kpi-section { margin-bottom: 2.5rem; }
-    .score-breakdowns h4 { margin-top: 1.5rem; color: #a06c49; font-size: 1.1rem; }
-    .intro { text-align: center; color: #a06c49; margin-bottom: 1rem; font-size: 1.05rem; }
-    @media (max-width: 600px) {
-      .navbar { flex-direction: column; align-items: stretch; gap: 0; }
-      .navbar .nav { flex-direction: column; gap: 0; }
-      .navbar button { text-align: left; }
-      .tab-content { padding: 1rem 0.6rem; }
-      table { font-size: 0.93rem; }
-    }
-  </style>
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(e => e.classList.remove('active'));
-      document.querySelectorAll('.navbar button').forEach(e => e.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      let idx = Array.from(document.querySelector('.nav').children).findIndex(x => x.textContent.trim().replace('&','and').toLowerCase().includes(tabId.replace('-','')));
-      if(idx>=0) document.querySelectorAll('.navbar button')[idx].classList.add('active');
-    }
-    window.onload = function(){ document.getElementById('splash').classList.add('active'); }
-  </script>
-</head>
-<body>
-  <nav class="navbar">
-    <a class="brand" href="#">Smith Gee KPIs</a>
-    <div class="nav">
-      <button class="active" onclick="showTab('splash')">Home</button>
-      <button onclick="showTab('senior-pm')">Senior Project Manager KPIs</button>
-      <button onclick="showTab('pm')">Project Manager KPIs</button>
-      <button onclick="showTab('designer')">Designer I &amp; II KPIs</button>
-      <button onclick="showTab('senior-designer')">Senior Designer I &amp; II KPIs</button>
-      <button onclick="showTab('bim')">BIM Manager KPIs</button>
-      <button onclick="showTab('citizenship')">Studio Citizenship Score</button>
-    </div>
-  </nav>
-  <section class="tab-content" id="splash">
-    <div class="intro">
-      <h2>Key Performance Indicators Portal</h2>
-      <p>Welcome to the professional criteria and scoring breakdowns for each role at Smith Gee. Use the tabs above to explore KPIs, benchmarks, and detailed score methodology for every position.</p>
-    </div>
-    <div style="margin:0 auto;max-width:700px;">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=cover&w=700&q=80" style="width:100%;border-radius:8px;margin-bottom:1.3em;box-shadow:0 2px 8px rgba(63,69,81,0.13);">
-    </div>
-  </section>
-  <!-- Senior PM -->
-  <section class="tab-content" id="senior-pm">
+          <section class="tab-content" id="bim">
     <div class="kpi-section">
-      <h3>Senior Project Manager KPIs</h3>
+      <h2>BIM Manager KPIs</h2>
       <table>
         <thead><tr><th>KPI Metric</th><th>Target/Benchmark</th><th>Formula</th></tr></thead>
         <tbody>
-          <tr><td>Team Utilization Rate</td><td>68-72%</td><td>(Total Team Direct Labor Hours &divide; Total Team Hours) × 100</td></tr>
-          <tr><td>Team Portfolio Profitability</td><td>20-24%</td><td>Sum of [(Revenue - Costs) &divide; Revenue] &divide; Number of Projects × 100</td></tr>
-          <tr><td>Direct Project Profitability</td><td>18-22%</td><td>(Your Project Revenue - Your Project Costs) &divide; Your Project Revenue × 100</td></tr>
-          <tr><td>Portfolio Budget Variance</td><td>Positive Variance</td><td>Sum of (Budgeted Cost - Actual Cost) across all projects</td></tr>
-          <tr><td>Team On-Time Delivery Rate</td><td>80%+</td><td>(Team Projects Delivered On-Time &divide; Total Team Projects) × 100</td></tr>
-          <tr><td>Team Average Realization Rate</td><td>94%+</td><td>Average [(Actual Revenue &divide; (Hours × Standard Rates)) × 100] across projects</td></tr>
-          <tr><td>Portfolio Change Order Profitability</td><td>65-75%</td><td>(Change Order Revenue - Change Order Costs) &divide; Change Order Revenue × 100</td></tr>
-          <tr><td>Studio Citizenship Score</td><td>&ge;3.50</td><td>(Supervisor Score × 0.75) + (Peer Score × 0.25)</td></tr>
+          <tr><td>Utilization Rate</td><td>55-65%</td><td>(Direct Labor Hours / Total Labor Hours) × 100</td></tr>
+          <tr><td>Model Delivery On-Time</td><td>85-95%</td><td>(BIM Deliverables On Schedule / Total BIM Deliverables) × 100</td></tr>
+          <tr><td>BIM Standards Compliance</td><td>96-100%</td><td>(Projects Meeting BIM Standards / Total Projects) × 100</td></tr>
+          <tr><td>Clash Detection Pre-Issue</td><td>85-95%</td><td>(Clashes Resolved Before Issue / Total Clashes Found) × 100</td></tr>
+          <tr><td>Team BIM Training Hours</td><td>40+ hrs/year</td><td>Total BIM Training Hours Delivered to Staff</td></tr>
+          <tr><td>Studio Citizenship Score</td><td>≥3.50</td><td>(Supervisor Score × 0.75) + (Peer Score × 0.25)</td></tr>
         </tbody>
       </table>
-      <div class="score-breakdowns">
-        <h4>Scoring: Success Criteria</h4>
-        <ul>
-          <li>Utilization: 70% avg, all PMs above 65%</li>
-          <li>Portfolio Profit: 22%+, no projects below 15% without approval</li>
-          <li>Direct Profit: 20%+ margin</li>
-          <li>Budget: $100,000+ surplus annually</li>
-          <li>Delivery: 80%+ on-time</li>
-          <li>Realization Rate: 94%+</li>
-          <li>Change Order: 70%+ margin</li>
-          <li>Citizenship: Solid (3.50-3.99), Outstanding (4.00-4.49), Exceptional (4.50-5.00)</li>
-        </ul>
-      </div>
+      <h3>Rationale & Success Criteria</h3>
+      <ul class="rationale">
+        <li>Utilization: 58-62% avg. Balances training, standards, management.</li>
+        <li>Model Delivery On-Time: 90%+. BIM coordination meets schedule.</li>
+        <li>BIM Standards Compliance: 98%+ projects meet firm standards.</li>
+        <li>Clash Detection: 90%+ resolved before issue, ensures buildability.</li>
+        <li>Training: 40+ hrs/year delivered firm-wide.</li>
+        <li>Citizenship: Solid (3.50-3.99), Outstanding (4.00-4.49), Exceptional (4.50-5.00).</li>
+      </ul>
     </div>
   </section>
-  <!-- PM -->
-  <section class="tab-content" id="pm">
+
+  <section class="tab-content" id="citizenship">
     <div class="kpi-section">
-      <h3>Project Manager KPIs</h3>
+      <h2>Studio Citizenship Score</h2>
       <table>
-        <thead><tr><th>KPI Metric</th><th>Target/Benchmark</th><th>Formula</th></tr></thead>
+        <thead><tr><th>Target/Benchmark</th><th>Formula</th><th>Rating Bands</th></tr></thead>
         <tbody>
-          <tr><td>Utilization Rate</td><td>68-75%</td><td>(Direct Labor Hours &divide; Total Labor Hours) × 100</td></tr>
-          <tr><td>Project Profitability</td><td>18-25%</td><td>(Project Revenue - Project Costs) &divide; Project Revenue × 100</td></tr>
-          <tr><td>Budget Variance</td><td>Positive Variance</td><td>Budgeted Project Cost - Actual Project Cost</td></tr>
-          <tr><td>Schedule Variance (Days)</td><td>&plusmn;5 days</td><td>Actual Completion Date - Planned Completion Date (days)</td></tr>
-          <tr><td>On-Time Delivery</td><td>75-85%</td><td>(Projects Delivered On-Time &divide; Total Projects) × 100</td></tr>
-          <tr><td>Realization Rate</td><td>92-96%</td><td>(Actual Revenue Invoiced &divide; (Hours × Standard Rates)) × 100</td></tr>
-          <tr><td>Rework Rate</td><td>&lt;10%</td><td>(Rework Hours from Change Orders &divide; Total Project Hours) × 100</td></tr>
-          <tr><td>Studio Citizenship Score</td><td>&ge;3.50</td><td>(Supervisor Score × 0.75) + (Peer Score × 0.25)</td></tr>
+          <tr><td>≥3.50</td><td>(Supervisor Score × 0.75) + (Peer Score × 0.25)</td><td>Solid (3.50-3.99), Outstanding (4.00-4.49), Exceptional (4.50-5.00)</td></tr>
         </tbody>
       </table>
-      <div class="score-breakdowns">
-        <h4>Scoring: Success Criteria</h4>
-        <ul>
-          <li>Utilization: 70-72% avg, 65% monthly minimum</li>
-          <li>Profit: 20%+ margin on 75% of projects</li>
-          <li>Budget: Under budget/within 5%</li>
-          <li>Schedule: Within 5 days of deadline</li>
-          <li>On-Time: 80%+ delivery</li>
-          <li>Realization: 94%+</li>
-          <li>Rework: &lt;10% hours</li>
-          <li>Citizenship: Solid (3.50-3.99), Outstanding (4.00-4.49), Exceptional (4.50-5.00)</li>
-        </ul>
-      </div>
+      <h3>Rationale & Success Criteria</h3>
+      <ul class="rationale">
+        <li>Promotes positive firm culture, collaboration, peer leadership.</li>
+        <li>All roles expected to maintain ≥3.50 score each year.</li>
+        <li>Recognition levels: Solid, Outstanding, Exceptional.</li>
+        <li>Formula is consistently applied across roles for fairness.</li>
+      </ul>
     </div>
   </section>
-  <!-- Designer I & II -->
-  <section class="tab-content" id="designer">
-    <div class="kpi-section">
-      <h3>Designer I &amp; II KPIs</h3>
-      <table>
-        <thead><tr><th>KPI Metric</th><th>Target/Benchmark</th><th>Formula</th></tr></thead>
-        <tbody>
-          <tr><td>Billable Utilization Rate</td><td>70-80% / 72-82%</td><td>(Billable Hours &divide; Total Hours) × 100</td></tr>
-          <tr><td>Task Completion Timeliness</td><td>88-94% / 90-96%</td><td>(Tasks Completed On-Time &divide; Total Tasks) × 100</td></tr>
-          <tr><td>Redline Response Accuracy</td><td>&ge;95%, &lt;2 rounds</td><td>(Accurate Redline Incorporations &divide; Total Redlines) × 100</td></tr>
-          <tr><td>BIM/CAD Standards Compliance</td><td>92-96% / 100%</td><td>(Compliant Deliverables &divide; Total Deliverables) × 100</td></tr>
-          <tr><td>Learning Progression</td><td>1 per quarter</td><td>Training Modules Completed per Quarter</td></tr>
-          <tr><td>Professional Development</td><td>&ge;20 hrs/year</td><td>Industry-Related Training Hours Annually</td></tr>
-          <tr><td>QA/QC Compliance</td><td>100%</td><td>(Deliverables QA/QC'd &divide; Total Deliverables) × 100</td></tr>
-          <tr><td>Drawing Accuracy</td><td>&lt;5% rework</td><td>(Drawings Requiring Significant Rework &divide; Total Drawings) × 100</td></tr>
-          <tr><td>Mentor Check-Ins & Engagement</td><td>Monthly / 4+ sessions/year</td><td>Mentorship Participation/Delivery</td></tr>
-          <tr><td>On-Time, Complete & Correct Delivery</td><td>&ge;95%</td><td>(Milestones Delivered OTCC &divide; Total Milestones) × 100</td></tr>
-          <tr><td>Project Budget Adherence</td><td>&lt;5% overrun</td><td>((Actual - Budget) &divide; Budget) × 100</td></tr>
-          <tr><td>Project Profitability</td><td>&ge;15%</td><td>((Revenue - Costs) &divide; Revenue) × 100</td></tr>
-          <tr><td>Studio Citizenship Score</td><td>&ge;3.50</td><td>(Supervisor Score × 0.75) + (Peer Score × 0.25)</td></tr>
-        </tbody>
-      </table>
-      <div class="score-breakdowns">
-        <h4>Scoring: Success Criteria</h4>
-        <ul>
-          <li>Utilization: 75-77% avg (I), 15% for training</li>
-          <li>Timeliness: 90-93%+ on-time completion</li>
-          <li>Redline: &gt;95% accuracy &lt;2 rounds</li>
-          <li>Compliance: 94-100% standards</li>
-          <li>Professional Development: 20+ hrs</li>
-          <li>QA/QC: 100% reviewed</li>
-          <li>Drawing Accuracy: &lt;5% rework</li>
-          <li>Mentorship: 1 module/qtr; I: monthly check-ins, II: 4+/yr</li>
-          <li>Citizenship: Solid (3.50-3.99), Outstanding (4.00-4.49), Exceptional (4.50-5.00)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <!-- Senior Designer I & II -->
-  <section class="tab-content" id="senior-designer">
-    <div class="kpi-section">
-      <h3>Senior Designer I &amp; II KPIs</h3>
-      <table>
-        <thead><tr><th>KPI Metric</th><th>Target/Benchmark</th><th>Formula</th></tr></thead>
-        <tbody>
-          <tr><td>Billable Utilization Rate</td><td>65-72% / 60-68%</td><td>(Billable Hours &divide; Total Hours) × 100</td></tr>
-          <tr><td>Project Deadline Adherence</td><td>&ge;90%</td><td>(Milestones Met On-Time &divide; Total Milestones) × 100</td></tr>
-          <tr><td>Quality & Error Reduction</td><td>Minimal errors</td><td>Drawing Errors per Project (tracked via QA/QC)</td></tr>
-          <tr><td>Mentorship & Team Development</td><td>4+ sessions/year</td><td>Technical/Mentorship Sessions Delivered Annually</td></tr>
-          <tr><td>On-Time, Complete & Correct Delivery</td><td>&ge;95%</td><td>(Milestones Delivered OTCC &divide; Total Milestones) × 100</td></tr>
-          <tr><td>Project Budget Adherence</td><td>&lt;5% overrun</td><td>((Actual - Budget) &divide; Budget) × 100</td></tr>
-          <tr><td>Project Profitability</td><td>&ge;15%</td><td>((Revenue - Costs) &divide; Revenue) × 100</td></tr>
-          <tr><td>Studio Citizenship Score</td><td>&ge;3
+</body>
+</html>
